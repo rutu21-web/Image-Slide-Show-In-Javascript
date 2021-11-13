@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow in Javscript</title>
+</head>
+<body>
+
+<image name="slide" width="400" height="150">
+
+<script>
+ 
+var i = 0;
+var images=[];
+var time=3000;
+
+images[0] = "top1.jpg";
+images[1] = "top2.jpg";
+images[2] = "top3.jpg";
+images[3] = "top4.jpg";
+images[4] = "top5.jpg";
+
+
+  // Change Image
+function changeImg(){
+	document.slide.src = images[i];
+
+	
+	if(i < images.length - 1){
+	  // Add 1 to Index
+	  i++; 
+	} else { 
+		// Reset Back To O
+		i = 0;
+	}
+
+
+	setTimeout("changeImg()", time);
+}
+
+// Run function when page loads
+window.onload=changeImg;
+
+
+
+
+
+</script>
+
+</body>
+</html>
